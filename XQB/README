@@ -1,0 +1,3 @@
+transfer code: eo$tki!5
+
+iptables -A INPUT -p tcp -s 173.35.154.236 --dport 22 -j ACCEPT

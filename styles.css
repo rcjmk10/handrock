@@ -1,0 +1,246 @@
+:root {
+  --ink: #1f2f3f;
+  --ink-soft: #445f79;
+  --line: #c9d2de;
+  --panel: #f9fbfd;
+  --brand: #0b3f62;
+  --brand-alt: #125889;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Trebuchet MS", Tahoma, Verdana, Arial, sans-serif;
+  background: #dcdcdc;
+}
+
+.site-shell {
+  width: min(1060px, calc(100% - 1rem));
+  margin: 0 auto 1.2rem;
+  background: #ffffff;
+  border-left: 8px solid #003f67;
+  border-right: 8px solid #003f67;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.site-header {
+  padding: 0.45rem 0.75rem;
+  background: #ffffff;
+  border-bottom: 1px solid #d7dce3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-logo img {
+  width: auto;
+  height: 58px;
+  max-width: min(100%, 230px);
+  object-fit: contain;
+}
+
+.top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.85rem;
+  justify-content: flex-end;
+}
+
+.top-nav a {
+  color: #0a4b85;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.2rem 0.1rem;
+}
+
+.top-nav a:hover,
+.top-nav a:focus-visible {
+  color: #0e68b5;
+  outline: none;
+}
+
+.top-nav a.active {
+  color: #042d52;
+}
+
+.legacy-strip {
+  background: #043a5a;
+  border-top: 1px solid #1d668f;
+  border-bottom: 1px solid #1d668f;
+}
+
+.legacy-banner {
+  display: block;
+  width: 100%;
+  aspect-ratio: 725 / 200;
+  object-fit: cover;
+}
+
+.legacy-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.35rem;
+  padding: 0.4rem;
+  background: #063f62;
+}
+
+.legacy-grid img {
+  width: 100%;
+  height: 126px;
+  object-fit: cover;
+  border: 1px solid #145f8a;
+}
+
+.hero {
+  padding: 1.45rem 1.35rem 1.1rem;
+  background: linear-gradient(145deg, var(--brand), var(--brand-alt));
+  color: #eef5fc;
+}
+
+.page-title {
+  margin: 0;
+  font-family: Tahoma, "Trebuchet MS", Arial, sans-serif;
+  font-size: clamp(1.45rem, 2.5vw, 1.95rem);
+  letter-spacing: 0.01em;
+}
+
+.page-subtitle {
+  margin: 0.5rem 0 0;
+  max-width: 72ch;
+  color: #d4e5f5;
+  line-height: 1.5;
+}
+
+.content {
+  padding: 1.1rem 1.35rem 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.card {
+  grid-column: span 12;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 1rem 1rem;
+}
+
+.card h2 {
+  margin: 0;
+  color: #113f67;
+  font-size: 1.15rem;
+}
+
+.card p {
+  margin: 0.7rem 0 0;
+  color: var(--ink-soft);
+  line-height: 1.62;
+}
+
+.it-gallery {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.it-gallery img {
+  width: 100%;
+  height: 122px;
+  object-fit: cover;
+  border: 1px solid #c5d0dc;
+  background: #eef3f8;
+}
+
+.contact-list {
+  margin: 0.72rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-list li {
+  margin-top: 0.45rem;
+  color: var(--ink-soft);
+}
+
+.contact-list strong {
+  color: var(--ink);
+}
+
+.note {
+  margin-top: 0.8rem;
+  color: #4f6072;
+  font-size: 0.95rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 0.85rem 1.35rem 1.1rem;
+  color: #536578;
+  font-size: 0.88rem;
+  background: #f8fbff;
+}
+
+@media (min-width: 860px) {
+  .card-half {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 850px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .top-nav {
+    justify-content: flex-start;
+  }
+
+  .legacy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .it-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .site-shell {
+    width: 100%;
+    border-left-width: 0;
+    border-right-width: 0;
+    margin: 0;
+  }
+
+  .hero,
+  .content,
+  .site-footer {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .legacy-grid,
+  .it-gallery {
+    grid-template-columns: 1fr;
+  }
+}
